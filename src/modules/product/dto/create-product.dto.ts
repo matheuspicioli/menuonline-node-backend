@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongo';
+import { ObjectId } from 'mongodb';
 
 export class CreateProductDto {
   name: string;

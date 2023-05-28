@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { BaseDto } from './base.dto';
-import { ObjectId } from 'mongo';
+import { ObjectId } from 'mongodb';
 
 @Injectable()
 export class BaseService {

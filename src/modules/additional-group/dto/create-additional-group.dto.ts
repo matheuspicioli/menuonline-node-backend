@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongo';
+import { ObjectId } from 'mongodb';
 
 export class CreateAdditionalGroupDto {
   name: string;

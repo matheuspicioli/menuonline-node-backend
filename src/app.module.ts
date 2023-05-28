@@ -10,9 +10,16 @@ import { OrderProductAdditionalModule } from './modules/order-product-additional
 import { ProductModule } from './modules/product/product.module';
 import { ProductAdditionalModule } from './modules/product-additional/product-additional.module';
 import { ProductCategoryModule } from './modules/product-category/product-category.module';
+import { ConfigModule } from '@nestjs/config';
+import { MongoModule } from './infra/mongo/mongo.module';
+import configuration from './infra/config/configuration';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      load: [configuration]
+    }),
+    MongoModule,
     AdditionalModule,
     AdditionalGroupModule,
     CostumerModule,
@@ -24,7 +31,6 @@ import { ProductCategoryModule } from './modules/product-category/product-catego
     ProductAdditionalModule,
     ProductCategoryModule,
   ],
-  controllers: [],
   providers: [BaseService],
 })
 export class AppModule {}
